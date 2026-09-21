@@ -1,6 +1,15 @@
 export const projects = [
   {
     number: '01',
+    category: 'Product concept / Hyperlocal commerce',
+    title: 'Hyperlocal Commerce',
+    description: 'A commerce project focused on making nearby products easier to discover and buy from local sellers.',
+    details: 'The idea keeps the useful part close to home: local inventory, simple discovery, and a clearer path from a nearby shop to a customer.',
+    technologies: ['Java', 'Spring Boot', 'REST APIs', 'MySQL'],
+    metrics: 'Concept / personal project',
+  },
+  {
+    number: '02',
     category: 'Backend / Security',
     title: 'Secure Weather API',
     description: 'A backend-focused project for learning how to protect an API properly: validation, auth, and cleaner service boundaries.',
@@ -9,7 +18,7 @@ export const projects = [
     metrics: 'Ongoing build / personal project',
   },
   {
-    number: '02',
+    number: '03',
     category: 'Machine Learning / Regression',
     title: 'Calorie Burn Prediction',
     description: 'A small machine learning project focused on understanding feature impact, model behavior, and clean evaluation.',
