@@ -15,6 +15,12 @@ const soundtrackList = document.querySelector('#soundtrack-list');
 const artistList = document.querySelector('#artist-list');
 const movieList = document.querySelector('#movie-list');
 
+const getMusicAccentClass = (artist) => ({
+  'Dean Martin': 'music-dean',
+  'Frank Sinatra': 'music-sinatra',
+  "Her's": 'music-hers',
+}[artist] ?? '');
+
 const setTheme = (theme, persist = false) => {
   const isLight = theme === 'light';
   if (isLight) {
@@ -60,7 +66,7 @@ if (projectList) {
 
 if (soundtrackList) {
   soundtrackList.innerHTML = soundtrack.map((track) => `
-    <div class="soundtrack-row${track.youtubeUrl ? '' : ' soundtrack-row-unverified'}" data-verification-status="${track.verificationStatus}">
+    <div class="soundtrack-row ${getMusicAccentClass(track.artist)}${track.youtubeUrl ? '' : ' soundtrack-row-unverified'}" data-verification-status="${track.verificationStatus}">
       <span class="track-number">${track.number}</span>
       ${track.youtubeUrl ? `<a class="track-title" href="${track.youtubeUrl}" target="_blank" rel="noopener noreferrer">${track.title}</a>` : `<span class="track-title">${track.title}</span>`}
       <span class="track-artist">${track.artist}</span>
@@ -70,7 +76,7 @@ if (soundtrackList) {
 
 if (artistList) {
   artistList.innerHTML = favoriteArtists.map((artist) => `
-    <article class="artist-row">
+    <article class="artist-row ${getMusicAccentClass(artist.name)}">
       <span class="artist-number">${artist.number}</span>
       ${artist.url ? `<a class="artist-portrait-link" href="${artist.url}" target="_blank" rel="noopener noreferrer" aria-label="Open ${artist.name} official link">${artist.imageUrl ? `<span class="artist-portrait"><img src="${artist.imageUrl}" alt="${artist.name}" loading="lazy"></span>` : '<span class="artist-portrait artist-portrait-type" aria-hidden="true">BPH</span>'}</a>` : (artist.imageUrl ? `<span class="artist-portrait"><img src="${artist.imageUrl}" alt="${artist.name}" loading="lazy"></span>` : '<span class="artist-portrait artist-portrait-type" aria-hidden="true">BPH</span>')}
       <div class="artist-copy">${artist.url ? `<a class="artist-name-link glow-text" href="${artist.url}" target="_blank" rel="noopener noreferrer">${artist.name}</a>` : `<h3 class="glow-text">${artist.name}</h3>`}<p>${artist.description}</p></div>

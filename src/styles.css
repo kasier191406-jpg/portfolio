@@ -142,3 +142,9 @@ dt { color: var(--muted); font: .59rem var(--mono); text-transform: uppercase; }
 }
 @media (max-width: 420px) { .hero-actions { flex-direction: column; } .hero-content h2 { font-size: clamp(2.3rem, 12vw, 5rem); } .hero-content h2 em, .section-heading h2 em { display: inline-block; max-width: 100%; overflow-wrap: break-word; white-space: normal; } .skills-grid { grid-template-columns: 1fr; } .movie-row { grid-template-columns: 2rem 4.5rem minmax(0, 1fr); } .movie-poster { width: 4.5rem; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+a:not(.button), button:not(.button), .glow-text { transition: color .22s ease, text-shadow .22s ease; }
+a:not(.button):hover, a:not(.button):focus-visible, button:not(.button):hover, button:not(.button):focus-visible, .glow-text:hover, .glow-text:focus-visible { text-shadow: 0 0 .55rem rgba(237, 241, 233, .16) !important; }
+.button { transition: color .22s ease, background-color .22s ease, border-color .22s ease, box-shadow .22s ease, text-shadow .22s ease, transform .22s ease; }
+.music-dean .glow-text:hover, .music-dean .glow-text:focus-visible, .music-dean .track-title:hover, .music-dean .track-title:focus-visible { color: #e4a0b3 !important; text-shadow: 0 0 .65rem rgba(228, 160, 179, .2) !important; }
+.music-sinatra .glow-text:hover, .music-sinatra .glow-text:focus-visible, .music-sinatra .track-title:hover, .music-sinatra .track-title:focus-visible { color: #83ace4 !important; text-shadow: 0 0 .65rem rgba(131, 172, 228, .2) !important; }
+.music-hers .glow-text:hover, .music-hers .glow-text:focus-visible, .music-hers .track-title:hover, .music-hers .track-title:focus-visible { color: #e6a1c2 !important; text-shadow: 0 0 .65rem rgba(230, 161, 194, .2) !important; }
