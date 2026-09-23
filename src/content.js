@@ -99,34 +99,3 @@ export const skills = [
   },
 ];
 
-export const soundtrack = [
-  { number: '01', title: 'The Wonderful Life', artist: 'Smith & Burrows', youtubeUrl: 'https://www.youtube.com/watch?v=GsgZ8_-7Plo', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '02', title: 'A Million and One', artist: 'Dean Martin', youtubeUrl: 'https://www.youtube.com/watch?v=VCgX1DhE1bc', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '03', title: 'The Door Is Still Open to My Heart', artist: 'Dean Martin', youtubeUrl: 'https://www.youtube.com/watch?v=4P0ELWVNO2c', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '04', title: 'What Once Was', artist: "Her's", youtubeUrl: 'https://www.youtube.com/watch?v=l-rjYVI3OMo', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '05', title: 'Face in the Crowd', artist: 'Dean Martin', youtubeUrl: 'https://www.youtube.com/watch?v=FO-E-0IGPAY', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '06', title: 'The Impossible Dream', artist: 'Andy Williams', youtubeUrl: 'https://www.youtube.com/watch?v=bzZufxcPwZE', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '07', title: 'My Way', artist: 'Frank Sinatra', youtubeUrl: 'https://www.youtube.com/watch?v=mKRmo30J7vU', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '08', title: 'Toska', artist: 'Molchat Doma', youtubeUrl: 'https://www.youtube.com/watch?v=1GwZbXcF00', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '09', title: 'Green, Green Grass of Home', artist: 'Curly Putman', youtubeUrl: 'https://www.youtube.com/watch?v=89IHQkArNry', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '10', title: "Can't Help Falling in Love", artist: 'Elvis Presley', youtubeUrl: 'https://www.youtube.com/watch?v=O-aavAlSYgc', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '11', title: 'Roses', artist: 'Mareux', youtubeUrl: 'https://www.youtube.com/watch?v=9Yoq2DFQlM', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '12', title: 'Lovers from the Past', artist: 'Mareux', youtubeUrl: 'https://www.youtube.com/watch?v=BOA35nEa8YA', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-  { number: '13', title: 'Diosa', artist: 'Mareux', youtubeUrl: 'https://www.youtube.com/watch?v=Bad5zz0kbTs', imageUrl: '', imageSource: '', license: '', verificationStatus: 'verified' },
-];
-
-export const favoriteArtists = [
-  { number: '01', name: 'Dean Martin', description: 'A warm, unhurried voice that makes classic pop feel like a room you want to stay in. I keep returning to the timing, phrasing, and calm confidence in his recordings.', url: 'https://deanmartin.com/', verificationStatus: 'verified', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Dean_Martin_-_publicity.JPG/250px-Dean_Martin_-_publicity.JPG', imageSource: 'https://commons.wikimedia.org/wiki/File:Dean_Martin_-_publicity.JPG', imageCreator: 'Studio', license: 'Public domain in the United States' },
-  { number: '02', name: 'Frank Sinatra', description: 'American singer and actor whose career included traditional pop and jazz standards.', url: 'https://www.sinatra.com/', verificationStatus: 'verified', imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Frank_Sinatra_%281957%29.jpg/250px-Frank_Sinatra_%281957%29.jpg', imageSource: 'https://commons.wikimedia.org/wiki/File:Frank_Sinatra_(1957).jpg', imageCreator: 'Publisher-Macfadden Publications, New York', license: 'Public domain in the United States; not renewed' },
-  { number: '03', name: 'Andy Williams', description: 'American singer known for traditional pop recordings and television performances.', url: 'https://andywilliams.com/', verificationStatus: 'verified', imageUrl: '', imageSource: '', imageCreator: '', license: '' },
-  { number: '04', name: "Her's", description: 'English indie rock band formed in Liverpool, known for their melodic guitar-driven music.', url: 'https://www.youtube.com/channel/UC1ZRqWrAj7jptR3k1AnWjEA', verificationStatus: 'verified', imageUrl: '', imageSource: '', imageCreator: '', license: '' },
-  { number: '05', name: 'Elvis Presley', description: 'American singer and actor widely associated with rock and roll and popular music.', url: 'https://www.elvisthemusic.com/', verificationStatus: 'verified', imageUrl: '', imageSource: '', imageCreator: '', license: '' },
-];
-
-export const movies = [
-  { number: '01', title: 'The Shining', imageUrl: '', imageSource: '', license: '' },
-  { number: '02', title: 'Big Fish', imageUrl: '', imageSource: '', license: '' },
-  { number: '03', title: 'The Sixth Sense', imageUrl: '', imageSource: '', license: '' },
-  { number: '04', title: 'The Big Lebowski', imageUrl: '', imageSource: '', license: '' },
-  { number: '05', title: "It's a Wonderful Life", imageUrl: '', imageSource: '', license: '' },
-];
