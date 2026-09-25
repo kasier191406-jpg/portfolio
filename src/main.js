@@ -5,10 +5,6 @@ const siteMenu = document.querySelector('#site-menu');
 const themeToggle = document.querySelector('.theme-toggle');
 const navLinks = [...document.querySelectorAll('.nav-link')];
 const sections = [...document.querySelectorAll('main section[id]')];
-const revealItems = document.querySelectorAll('.reveal');
-const magneticTitle = document.querySelector('.magnetic-title');
-const contactSection = document.querySelector('.contact-section');
-
 const projectList = document.querySelector('#project-list');
 const skillsList = document.querySelector('#skills-list');
 
@@ -88,92 +84,3 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-35% 0px -55% 0px' });
 
 sections.forEach((section) => sectionObserver.observe(section));
-
-const revealObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-
-revealItems.forEach((item) => revealObserver.observe(item));
-
-if (magneticTitle && contactSection) {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const letters = [];
-  let pointer = null;
-  let animationFrame = null;
-
-  magneticTitle.querySelectorAll('.magnetic-line').forEach((line) => {
-    const characters = [...line.textContent];
-    line.textContent = '';
-    characters.forEach((character, index) => {
-      const letter = document.createElement('span');
-      letter.className = 'magnetic-letter';
-      letter.setAttribute('aria-hidden', 'true');
-      letter.textContent = character === ' ' ? '\u00a0' : character;
-      letter.style.setProperty('--letter-index', index);
-      letter.style.setProperty('--pulse-tilt', index % 2 === 0 ? '-1.5deg' : '1.5deg');
-      line.append(letter);
-      letters.push(letter);
-    });
-  });
-
-  const resetLetters = () => {
-    letters.forEach((letter) => {
-      letter.style.setProperty('--letter-x', '0px');
-      letter.style.setProperty('--letter-y', '0px');
-      letter.style.setProperty('--letter-r', '0deg');
-      letter.style.setProperty('--letter-scale', '1');
-    });
-  };
-
-  const animateLetters = () => {
-    animationFrame = null;
-    if (reducedMotion.matches || !pointer) {
-      resetLetters();
-      return;
-    }
-
-    letters.forEach((letter) => {
-      const bounds = letter.getBoundingClientRect();
-      const centerX = bounds.left + bounds.width / 2;
-      const centerY = bounds.top + bounds.height / 2;
-      const distanceX = pointer.x - centerX;
-      const distanceY = pointer.y - centerY;
-      const distance = Math.hypot(distanceX, distanceY);
-      const influence = Math.max(0, 1 - distance / 170);
-      const strength = influence * influence;
-      letter.style.setProperty('--letter-x', `${(-distanceX * strength * 0.12).toFixed(2)}px`);
-      letter.style.setProperty('--letter-y', `${(-distanceY * strength * 0.12).toFixed(2)}px`);
-      letter.style.setProperty('--letter-r', `${(distanceX * strength * 0.035).toFixed(2)}deg`);
-      letter.style.setProperty('--letter-scale', (1 + strength * 0.035).toFixed(3));
-    });
-  };
-
-  const queueAnimation = () => {
-    if (!animationFrame) animationFrame = requestAnimationFrame(animateLetters);
-  };
-
-  contactSection.addEventListener('pointermove', (event) => {
-    pointer = { x: event.clientX, y: event.clientY };
-    queueAnimation();
-  }, { passive: true });
-
-  contactSection.addEventListener('pointerleave', () => {
-    pointer = null;
-    queueAnimation();
-  });
-
-  magneticTitle.addEventListener('pointerdown', () => {
-    if (reducedMotion.matches) return;
-    magneticTitle.classList.remove('is-pulsing');
-    void magneticTitle.offsetWidth;
-    magneticTitle.classList.add('is-pulsing');
-  });
-
-  magneticTitle.addEventListener('animationend', () => magneticTitle.classList.remove('is-pulsing'));
-  reducedMotion.addEventListener('change', queueAnimation);
-}
